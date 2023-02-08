@@ -1,8 +1,4 @@
-import React from "react";
 import {
-  MdHomeFilled,
-  MdOutlineSlowMotionVideo,
-  MdSubscriptions,
   MdOutlineVideoLibrary,
   MdHistory,
   MdOutlineSmartDisplay,
@@ -15,28 +11,11 @@ import {
   MdOutlineSportsVolleyball,
 } from "react-icons/md";
 import { TbMusic, TbDeviceGamepad2 } from "react-icons/tb";
-import { FaRegCompass } from "react-icons/fa";
 import { GiFilmStrip } from "react-icons/gi";
+import { SidebarMainLinks } from "./SidebarMainLinks";
 
 export default function Sidebar() {
-  const mainLinks = [
-    {
-      icon: <MdHomeFilled className="text-xl" />,
-      name: "Home",
-    },
-    {
-      icon: <FaRegCompass className="text-xl" />,
-      name: "Explore",
-    },
-    {
-      icon: <MdOutlineSlowMotionVideo className="text-xl" />,
-      name: "Shorts",
-    },
-    {
-      icon: <MdSubscriptions className="text-xl" />,
-      name: "Subscriptions",
-    },
-  ];
+
   const secondaryLinks = [
     {
       icon: <MdOutlineVideoLibrary className="text-xl" />,
@@ -115,75 +94,65 @@ export default function Sidebar() {
   ];
 
   return (
-    <div className="w-2/12 min-w-[300px] bg-[#212121] pr-5 overflow-auto pb-8 sidebar">
-      <ul className="flex flex-col border-b-2 border-gray-700">
-        {mainLinks.map(({ icon, name }) => {
-          return (
-            <li
-              key={name}
-              className={`pl-6 py-3 hover:bg-zinc-600 ${
-                name === "Home" ? "bg-zinc-600" : ""
-              }`}
-            >
-              <a href="#" className="flex items-center gap-5">
-                {icon}
-                <span className="text-sm tracking-wider">{name}</span>
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-      <ul className="flex flex-col border-b-2 border-gray-700">
-        {secondaryLinks.map(({ icon, name }) => {
-          return (
-            <li key={name} className={`pl-6 py-3 hover:bg-zinc-600`}>
-              <a href="#" className="flex items-center gap-5">
-                {icon}
-                <span className="text-sm tracking-wider">{name}</span>
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-      <ul className="flex flex-col border-b-2 border-gray-700">
-        {subscriptionLinks.map(({ icon, name }) => {
-          return (
-            <li key={name} className={`pl-6 py-3 hover:bg-zinc-600`}>
-              <a href="#" className="flex items-center gap-5">
-                {icon}
-                <span className="text-sm tracking-wider">{name}</span>
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-      <ul className="flex flex-col border-b-2 border-gray-700">
-        {helpLinks.map(({ icon, name }) => {
-          return (
-            <li key={name} className={`pl-6 py-3 hover:bg-zinc-600`}>
-              <a href="#" className="flex items-center gap-5">
-                {icon}
-                <span className="text-sm tracking-wider">{name}</span>
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-      <ul className="flex gap-2 flex-wrap text-sm p-4 text-zinc-400">
-        {textLinks[0].map((name) => {
-            return <li key={name}>{name}</li>
-        })}
-      </ul>
-      <ul className="flex gap-2 flex-wrap text-sm p-4 text-zinc-400">
-        {textLinks[1].map((name) => {
-            return <li key={name}>{name}</li>
-        })}
-      </ul>
-      <span className="px-4 text-sm text-zinc-400">&copy; 2023 Google</span>
-      <br />
-      <p className="px-4 pt-3 text-sm text-zinc-400">
-        This clone is for educational purpose only.
-      </p>
+    <div className="overflow-auto pb-8 min-w-[80px] max-w-[300px]">
+      <span className="hidden xl:block">
+        <SidebarMainLinks isMobile={false} />
+        <ul className="flex flex-col border-b-2 border-gray-700">
+          {secondaryLinks.map(({ icon, name }) => {
+            return (
+              <li key={name} className={`pl-6 py-3 hover:bg-zinc-600`}>
+                <a href="#" className="flex items-center gap-5">
+                  {icon}
+                  <span className="text-sm tracking-wider">{name}</span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+        <ul className="flex flex-col border-b-2 border-gray-700">
+          {subscriptionLinks.map(({ icon, name }) => {
+            return (
+              <li key={name} className={`pl-6 py-3 hover:bg-zinc-600`}>
+                <a href="#" className="flex items-center gap-5">
+                  {icon}
+                  <span className="text-sm tracking-wider">{name}</span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+        <ul className="flex flex-col border-b-2 border-gray-700">
+          {helpLinks.map(({ icon, name }) => {
+            return (
+              <li key={name} className={`pl-6 py-3 hover:bg-zinc-600`}>
+                <a href="#" className="flex items-center gap-5">
+                  {icon}
+                  <span className="text-sm tracking-wider">{name}</span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+        <ul className="flex gap-2 flex-wrap text-sm p-4 text-zinc-400">
+          {textLinks[0].map((name) => {
+            return <li key={name}>{name}</li>;
+          })}
+        </ul>
+        <ul className="flex gap-2 flex-wrap text-sm p-4 text-zinc-400">
+          {textLinks[1].map((name) => {
+            return <li key={name}>{name}</li>;
+          })}
+        </ul>
+        <span className="px-4 text-sm text-zinc-400">&copy; 2023 Google</span>
+        <br />
+        <p className="px-4 pt-3 text-sm text-zinc-400">
+          This clone is for educational purpose only.
+        </p>
+      </span>
+      <div className="block xl:hidden">
+        <SidebarMainLinks isMobile={true} />
+      </div>
+      
     </div>
   );
 }

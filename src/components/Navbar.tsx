@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <div className="flex justify-between items-center px-14 h-14 bg-[#212121] opacity-95 sticky top-0 z-50">
       <div className="flex gap-8 items-center text-2xl">
-        <div>
+        <div className="cursor-pointer">
           <GiHamburgerMenu />
         </div>
         <Link to="/">

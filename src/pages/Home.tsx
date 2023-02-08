@@ -40,7 +40,7 @@ export default function Home() {
             height={900}
           >
 
-            <div className="grid grid-cols-4 p-8 gap-y-[120px] gap-x-5">
+            <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 p-8 2xl:gap-y-[120px] lg:gap-y-[80px] lg:gap-x-5 gap-x-7 ">
               {videos.map((item: HomePageVideos) => {
                 return <Card data={item} key={item.videoId} />;
               })}
