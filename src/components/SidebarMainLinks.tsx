@@ -28,7 +28,11 @@ export function SidebarMainLinks({ isMobile = false }) {
   ];
 
   return (
-    <ul className="flex flex-col justify-center py-8">
+    <ul
+      className={`flex flex-col justify-center pt-8 ${
+        !isMobile ? "border-b-2 border-gray-700" : null
+      }`}
+    >
       {mainLinks.map(({ icon, name }, index) => {
         return (
           <li
@@ -40,7 +44,7 @@ export function SidebarMainLinks({ isMobile = false }) {
                             ? "flex justify-center"
                             : `pl-6 py-3 
                             ${name === "Home" ? "bg-zinc-600" : null}`
-                        } "hover:bg-zinc-600"`}
+                        } hover:bg-zinc-600`}
           >
             {isMobile ? (
               <>

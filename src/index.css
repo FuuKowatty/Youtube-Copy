@@ -7,10 +7,6 @@ body {
   font-family: 'Roboto', sans-serif
 }
 
-.no-arrow {
-  display:none
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
