@@ -6,6 +6,8 @@ import { PayloadAction } from "@reduxjs/toolkit";
 import { getVideoDetails } from "./reducers/getVideoDetails";
 import { getRecommendedVideos } from "./reducers/getRecommendedVideos";
 
+import { toggledSidebarSlice } from "./slices/toggledSidebarSlice";
+
 const initialState: InitialState = {
   videos: [],
   currentPlaying: null,
@@ -48,13 +50,16 @@ const YoutubeSlice = createSlice({
   },
 });
 
+
 export const store = configureStore({
   reducer: {
     youtubeApp: YoutubeSlice.reducer,
+    toggleSidebar: toggledSidebarSlice.reducer
   },
 });
 
 export const {clearVideos, changeSearchTerm, clearSearchTerm} = YoutubeSlice.actions
+export const {toggleSidebar} = toggledSidebarSlice.actions
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
