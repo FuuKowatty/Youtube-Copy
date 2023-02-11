@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Spinner from "../components/Spinner";
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
+import Navbar from "../components/Navbar/Navbar";
+import Sidebar from "../components/Sidebar/Sidebar";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { HomePageVideos } from "../Types";
 import { clearVideos } from "../store";

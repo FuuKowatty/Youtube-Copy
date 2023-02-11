@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { getRecommendedVideos } from "../store/reducers/getRecommendedVideos";
 import { getVideoDetails } from "../store/reducers/getVideoDetails";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import { BiLike, BiDislike } from "react-icons/bi";
 import { HiScissors } from "react-icons/hi";
 import { MdOutlinePlaylistAdd } from "react-icons/md";
