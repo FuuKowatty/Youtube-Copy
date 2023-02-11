@@ -6,6 +6,11 @@ export interface InitialState {
     nextPageToken: string | null;
     recommendedVideos: RecommendedVideos[];
   }
+
+  export interface linkType {
+    icon: JSX.Element,
+    name: string
+  }
   
   export interface HomePageVideos {
     videoId: string;
