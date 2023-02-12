@@ -8,13 +8,10 @@ export default function () {
 
     const dispatch = useAppDispatch();
 
-    const showNavbar = () => {
-        dispatch(toggleSidebar())
-      }
 
   return (
     <div className="flex gap-1 items-center text-2xl">
-      <div className="cursor-pointer" onClick={() => showNavbar()}>
+      <div className="cursor-pointer" onClick={() => dispatch(toggleSidebar())}>
         <GiHamburgerMenu />
       </div>
       <Link to="/" onClick={() => dispatch(clearVideos())}>

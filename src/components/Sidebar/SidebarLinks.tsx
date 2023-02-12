@@ -1,6 +1,6 @@
 import { linkType } from "../../Types";
 
-export function SidebarLinks({links}: any) {
+export function SidebarLinks({links}: {links: linkType[]}) {
 
     return (
       <ul className="flex flex-col border-b-2 border-gray-700">

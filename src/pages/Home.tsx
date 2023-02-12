@@ -10,6 +10,7 @@ import Card from "../components/Card";
 import { clearVideos } from "../store";
 import SidebarMobileFull from "../components/Sidebar/SidebarMobileFull";
 
+
 export default function Home() {
   const dispatch = useAppDispatch();
   const videos = useAppSelector((state) => state.youtubeApp.videos);
@@ -27,7 +28,7 @@ export default function Home() {
 
   return (
     <div className="max-h-screen overflow-hidden">
-      {isToggled ? <SidebarMobileFull /> : null}
+      <SidebarMobileFull />
       <div style={{ height: "7.5vh" }}>
         <Navbar />
       </div>
@@ -46,7 +47,7 @@ export default function Home() {
             >
               <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 p-8 sm:gap-y-[25px] lg:gap-x-5 gap-x-7 justify-center">
                 {videos.map((item: HomePageVideos) => {
-                  return <Card data={item} key={item.videoId} />;
+                  return <Card data={item} key={crypto.randomUUID()} />;
                 })}
               </div>
             </InfiniteScroll>
